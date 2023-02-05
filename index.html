@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .heart {
+      background-color: pink;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      background-color: pink;
+      border-radius: 25px 25px 0;
+      position: absolute;
+    }
+
+    .heart:before {
+      width: 32px;
+      height: 39px;
+      top: -20px;
+      left: -15px;
+    }
+
+    .heart:after {
+      width: 32px;
+      height: 39px;
+      top: -20px;
+      right: -15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" id="heart"></div>
+  <p id="message" style="display: none;"> Bom dia, amor! O sol nasceu mais uma vez e com ele renasce a minha paixão por você. Você é o meu raio de sol em um dia chuvoso, a minha rocha em tempos de tempestade. Quero agradecer por todos os momentos maravilhosos que compartilhamos e por todo o amor que você me dá. Que este novo dia seja tão incrível quanto você é e que possamos nos amar ainda mais. Te amo mais do que as palavras possam expressar. Tenha um dia maravilhoso!</p>
+  <script>
+    const heart = document.querySelector("#heart");
+    const message = document.querySelector("#message");
+    let size = 50;
+    heart.addEventListener("click", function() {
+      size += 10;
+      heart.style.width = size + "px";
+      heart.style.height = size + "px";
+      if (size === 100) {
+        message.style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
